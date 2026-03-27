@@ -26,68 +26,74 @@ const SideNav: React.FC<SideNavProps> = ({ activeSection }) => {
       {/* Mobile Toggle Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 right-4 z-[60] md:hidden bg-blue-600 text-white p-3 rounded-2xl shadow-lg shadow-blue-500/30 transition-all active:scale-95"
+        className="fixed top-6 right-6 z-[70] md:hidden bg-blue-600/20 backdrop-blur-xl border border-blue-500/30 text-white p-3.5 rounded-2xl shadow-2xl transition-all active:scale-95 group"
         aria-label="Toggle menu"
       >
         {isOpen ? (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         )}
       </button>
 
       {/* Side Navigation */}
-      <nav className={`fixed left-0 top-0 h-full w-64 bg-gray-900/98 md:bg-gray-900/50 backdrop-blur-2xl border-r border-gray-800 flex flex-col p-8 z-50 transition-transform duration-400 ease-out md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
-        <div className="mb-16">
-          <a 
-            href="#home" 
-            onClick={(e) => { e.preventDefault(); handleScroll('home'); }}
-            className="text-2xl font-black text-white tracking-widest group"
+      <nav className={`fixed left-0 top-0 h-full w-24 md:w-64 flex flex-col items-center md:items-start py-12 px-4 md:px-8 z-50 transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+        {/* Logo */}
+        <div className="mb-20">
+          <button 
+            onClick={() => handleScroll('home')}
+            className="text-3xl font-black text-white hover:scale-110 transition-transform group relative"
           >
-            PRAMOD<span className="text-blue-500 group-hover:animate-pulse">.</span>
-          </a>
+            P<span className="md:inline hidden">RAMOD</span><span className="text-blue-500 animate-pulse">.</span>
+          </button>
         </div>
 
-        <div className="space-y-4 flex-grow">
+        {/* Links */}
+        <div className="flex flex-col gap-8 w-full">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`flex items-center gap-4 w-full text-left px-5 py-3.5 rounded-2xl text-lg font-semibold transition-all duration-300 group ${
-                activeSection === item.id
-                  ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
-                  : 'text-gray-400 hover:text-white hover:bg-gray-800/60 border border-transparent'
+              className={`relative flex items-center justify-center md:justify-start gap-4 p-2 rounded-xl transition-all duration-300 group ${
+                activeSection === item.id ? 'text-blue-400' : 'text-gray-500 hover:text-gray-300'
               }`}
             >
-              <span className={`text-xl transition-transform duration-300 ${activeSection === item.id ? 'scale-110' : 'group-hover:scale-110'}`}>
+              {/* Active Indicator Line */}
+              <div className={`absolute -left-4 md:-left-8 w-1.5 h-full bg-blue-500 rounded-r-full transition-all duration-500 transform ${
+                activeSection === item.id ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
+              }`} />
+              
+              <span className={`text-2xl transition-all duration-300 ${activeSection === item.id ? 'scale-125' : 'group-hover:scale-110'}`}>
                 {item.icon}
               </span>
-              {item.label}
+              <span className={`hidden md:block text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 ${
+                activeSection === item.id ? 'translate-x-2' : 'group-hover:translate-x-1'
+              }`}>
+                {item.label}
+              </span>
             </button>
           ))}
         </div>
 
-        <div className="mt-auto pt-8 border-t border-gray-800">
-          <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold mb-4">
-            Connect
-          </p>
-          <div className="flex gap-4 mb-8">
+        {/* Footer / Connect */}
+        <div className="mt-auto hidden md:block">
+          <div className="flex flex-col gap-4">
             <a 
               href="https://www.linkedin.com/in/pramod-sharma" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-4 py-2 bg-gray-800 rounded-xl text-gray-300 hover:text-blue-400 transition-colors text-xs font-bold border border-gray-700 hover:border-blue-500/50"
+              className="text-gray-600 hover:text-blue-500 transition-colors text-[10px] font-black uppercase tracking-widest flex items-center gap-2"
             >
-              LinkedIn
+              <div className="w-4 h-[1px] bg-gray-800"></div> LinkedIn
             </a>
+            <p className="text-[10px] text-gray-700 font-bold uppercase tracking-widest">
+              &copy; {new Date().getFullYear()}
+            </p>
           </div>
-          <p className="text-[10px] text-gray-600 font-medium">
-            &copy; {new Date().getFullYear()} Pramod Sharma
-          </p>
         </div>
       </nav>
 
@@ -95,7 +101,7 @@ const SideNav: React.FC<SideNavProps> = ({ activeSection }) => {
       {isOpen && (
         <div 
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden animate-reveal"
+          className="fixed inset-0 bg-gray-950/80 backdrop-blur-md z-[60] md:hidden transition-all duration-500"
         />
       )}
     </>
@@ -103,3 +109,4 @@ const SideNav: React.FC<SideNavProps> = ({ activeSection }) => {
 };
 
 export default SideNav;
+
