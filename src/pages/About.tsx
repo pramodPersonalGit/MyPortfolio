@@ -1,37 +1,46 @@
-// Certification badge images (relative to public folder via import)
+import badgeAppBuilder from '../Images/2021-03_Badge_SF-Certified_Platform-App-Builder_High-Res.png'
+import badgeDev2 from '../Images/2021-03_Badge_SF-Certified_Platform-Developer-II_High-Res.png'
+import badgeAgentforce from '../Images/2025-02_Badge_SF-Certified_Agentforce-Specialist_High-Res.png'
+import badgeAdmin from '../Images/2025-03_Badge_SF-Certified_Platform-Admin_High-Res.png'
+import badgeFoundations from '../Images/2025-03_Badge_SF-Certified_Platform-Foundations_High-Res.png'
+import badgePlatDev from '../Images/2025-04_Badge_SF-Certified_Plat-Dev_High-Res.png'
+import badgeStatus from '../Images/badge status.png'
+import agentblazerStatus from '../Images/agentbalzer status.png'
+
+// Certification badge images
 const certBadges = [
   {
-    src: '/docs/Images/2021-03_Badge_SF-Certified_Platform-App-Builder_High-Res.png',
+    src: badgeAppBuilder,
     alt: 'Salesforce Certified Platform App Builder',
     label: 'Platform App Builder',
     year: '2021',
   },
   {
-    src: '/docs/Images/2021-03_Badge_SF-Certified_Platform-Developer-II_High-Res.png',
+    src: badgeDev2,
     alt: 'Salesforce Certified Platform Developer II',
     label: 'Platform Developer II',
     year: '2021',
   },
   {
-    src: '/docs/Images/2025-02_Badge_SF-Certified_Agentforce-Specialist_High-Res.png',
+    src: badgeAgentforce,
     alt: 'Salesforce Certified Agentforce Specialist',
     label: 'Agentforce Specialist',
     year: '2025',
   },
   {
-    src: '/docs/Images/2025-03_Badge_SF-Certified_Platform-Admin_High-Res.png',
+    src: badgeAdmin,
     alt: 'Salesforce Certified Administrator',
     label: 'Platform Administrator',
     year: '2025',
   },
   {
-    src: '/docs/Images/2025-03_Badge_SF-Certified_Platform-Foundations_High-Res.png',
+    src: badgeFoundations,
     alt: 'Salesforce Certified Platform Foundations',
     label: 'Platform Foundations',
     year: '2025',
   },
   {
-    src: '/docs/Images/2025-04_Badge_SF-Certified_Plat-Dev_High-Res.png',
+    src: badgePlatDev,
     alt: 'Salesforce Certified Platform Developer',
     label: 'Platform Developer',
     year: '2025',
@@ -117,7 +126,7 @@ export default function About() {
             🏅 Badge &amp; Ranking Status
           </h3>
           <img
-            src="/docs/Images/badge status.png"
+            src={badgeStatus}
             alt="Trailhead badge and ranking status"
             className="rounded-lg w-full object-contain"
           />
@@ -127,7 +136,7 @@ export default function About() {
             🤖 Agentblazer Status
           </h3>
           <img
-            src="/docs/Images/agentbalzer status.png"
+            src={agentblazerStatus}
             alt="Agentblazer status"
             className="rounded-lg w-full object-contain"
           />
