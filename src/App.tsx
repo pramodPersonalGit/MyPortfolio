@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import SideNav from './components/SideNav'
 import Home from './pages/Home'
 import About from './pages/About'
-import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
 
@@ -28,7 +27,7 @@ function App() {
       observerOptions
     );
 
-    const sections = ['home', 'about', 'projects', 'contact'];
+    const sections = ['home', 'about', 'contact'];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -59,15 +58,6 @@ function App() {
         >
           <div className="w-full">
             <About />
-          </div>
-        </section>
-
-        <section 
-          id="projects" 
-          className={`min-h-screen flex items-center justify-center snap-start transition-all duration-1000 ${visibleSections['projects'] ? 'reveal-visible' : 'reveal-hidden'} py-16`}
-        >
-          <div className="w-full">
-            <Projects />
           </div>
         </section>
 

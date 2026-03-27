@@ -11,8 +11,22 @@ const contactLinks: ContactLink[] = [
     id: 'contact-email',
     icon: '✉️',
     label: 'Email',
-    value: 'pramod.sharma@example.com',
-    href: 'mailto:pramod.sharma@example.com',
+    value: 'pramodvaishnav989@gmail.com',
+    href: 'mailto:pramodvaishnav989@gmail.com',
+  },
+  {
+    id: 'contact-phone',
+    icon: '📞',
+    label: 'Phone',
+    value: '+91-9828491079',
+    href: 'tel:+919828491079',
+  },
+  {
+    id: 'contact-location',
+    icon: '📍',
+    label: 'Location',
+    value: 'Ajmer, Rajasthan',
+    href: '#',
   },
   {
     id: 'contact-linkedin',
@@ -20,13 +34,6 @@ const contactLinks: ContactLink[] = [
     label: 'LinkedIn',
     value: 'linkedin.com/in/pramod-sharma',
     href: 'https://www.linkedin.com/in/pramod-sharma',
-  },
-  {
-    id: 'contact-trailhead',
-    icon: '🌩️',
-    label: 'Trailhead',
-    value: '@PramodSharma',
-    href: 'https://trailblazer.salesforce.com/',
   },
 ]
 

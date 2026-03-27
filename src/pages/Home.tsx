@@ -2,42 +2,37 @@ import profilePic from '../Images/WhatsApp Image 2026-02-23 at 1.15.50 PM.jpeg';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4">
+    <div className="relative min-h-screen flex flex-col items-center justify-center pt-10 px-4">
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
         
         {/* LEFT: Intro Content */}
         <div className="flex-1 text-left order-2 lg:order-1 animate-fade-left">
-          {/* Greeting */}
-          <p className="text-blue-400 font-bold text-xl mb-4 tracking-widest uppercase opacity-0 animate-reveal delay-100">
-            👋 Hey, I'm
-          </p>
-
-          {/* Name */}
-          <h1 className="text-6xl sm:text-8xl font-black text-white mb-6 leading-tight tracking-tighter opacity-0 animate-reveal delay-200">
-            Pramod<span className="text-blue-500">.</span>
+          {/* Main Heading */}
+          <h1 className="text-6xl sm:text-8xl font-black text-white mb-6 leading-tight tracking-tighter">
+            Hey, I'm <span className="text-blue-500">Pramod.</span>
           </h1>
 
-          {/* Title */}
-          <p className="text-2xl sm:text-3xl font-bold text-gray-300 mb-8 opacity-0 animate-reveal delay-300">
+          {/* Subheading (role/title) */}
+          <p className="text-2xl sm:text-3xl font-bold text-gray-300 mb-8">
             Salesforce Developer &{' '}
             <span className="text-blue-400">AI Specialist</span>
           </p>
 
-          {/* Intro */}
-          <p className="text-gray-400 text-lg leading-relaxed max-w-xl mb-12 opacity-0 animate-reveal delay-500">
+          {/* Short Intro Text */}
+          <p className="text-gray-400 text-lg leading-relaxed max-w-xl mb-12">
             I craft scalable solutions that bridge the gap between business needs and 
             technological excellence. My focus is on Salesforce architecture, 
             Agentforce, and AI-driven automation.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-5 opacity-0 animate-reveal delay-500">
+          <div className="flex flex-wrap gap-5">
             <a
-              href="#projects"
-              id="home-view-projects"
+              href="#about"
+              id="home-about-me"
               className="px-10 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-blue-600/30 active:scale-95"
             >
-              View Projects
+              About Me
             </a>
             <a
               href="#contact"
