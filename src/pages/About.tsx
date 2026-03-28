@@ -4,8 +4,7 @@ import badgeAgentforce from '../Images/2025-02_Badge_SF-Certified_Agentforce-Spe
 import badgeAdmin from '../Images/2025-03_Badge_SF-Certified_Platform-Admin_High-Res.png'
 import badgeFoundations from '../Images/2025-03_Badge_SF-Certified_Platform-Foundations_High-Res.png'
 import badgePlatDev from '../Images/2025-04_Badge_SF-Certified_Plat-Dev_High-Res.png'
-import badgeStatus from '../Images/badge status.png'
-import agentblazerStatus from '../Images/agentbalzer status.png'
+import TrailheadDashboard from '../components/TrailheadDashboard'
 
 // Certification badge images
 const certBadges = [
@@ -226,29 +225,9 @@ export default function About() {
       </div>
 
       {/* Badge & Agentblazer Status */}
-      <div id="trailhead-status" className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 hover:border-blue-500 transition-all duration-300 shadow-xl hover:bg-gray-800/60">
-          <h3 className="text-lg font-semibold text-white mb-4">
-            🏅 Badge &amp; Ranking Status
-          </h3>
-          <img
-            src={badgeStatus}
-            alt="Trailhead badge and ranking status"
-            className="rounded-lg w-full object-contain"
-          />
-        </div>
-        <div className="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-5 hover:border-blue-500 transition-all duration-300 shadow-xl hover:bg-gray-800/60">
-          <h3 className="text-lg font-semibold text-white mb-4">
-            🤖 Agentblazer Status
-          </h3>
-          <img
-            src={agentblazerStatus}
-            alt="Agentblazer status"
-            className="rounded-lg w-full object-contain"
-          />
-        </div>
+      <div id="trailhead-status">
+        <TrailheadDashboard />
       </div>
     </div>
   )
 }
-

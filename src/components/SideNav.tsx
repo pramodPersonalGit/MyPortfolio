@@ -45,15 +45,7 @@ const SideNav: React.FC<SideNavProps> = ({ activeSection }) => {
           ? 'translate-x-0 bg-gray-950/95 backdrop-blur-xl w-72 border-r border-blue-500/10 shadow-2xl' 
           : '-translate-x-full md:translate-x-0 md:bg-transparent md:w-64 w-24'
       }`}>
-        {/* Logo */}
-        <div className="mb-20">
-          <button 
-            onClick={() => handleScroll('home')}
-            className="text-3xl font-black text-white hover:scale-110 transition-transform group relative"
-          >
-            P<span className={`${isOpen ? 'inline' : 'hidden'} md:inline`}>RAMOD</span><span className="text-blue-500">.</span>
-          </button>
-        </div>
+        {/* Logo area removed */}
 
         {/* Links */}
         <div className="flex flex-col gap-10 w-full">
