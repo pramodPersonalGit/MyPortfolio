@@ -1,8 +1,18 @@
-import profilePic from '../Images/WhatsApp Image 2026-02-23 at 1.15.50 PM.jpeg';
+import profilePic from '../Images/20251220_023534(1).jpg.jpeg';
+import bgPic from '../Images/WhatsApp Image 2026-02-23 at 1.15.50 PM.jpeg';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center pt-10 px-4">
+    <div className="relative w-full flex flex-col items-center px-4">
+      {/* BACKGROUND IMAGE: Faded and Blurry */}
+      <div className="absolute inset-x-0 -top-40 -z-20 flex justify-center opacity-10 pointer-events-none">
+        <img 
+          src={bgPic} 
+          alt="" 
+          className="w-[1000px] h-auto object-contain blur-3xl rounded-full"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
         
         {/* LEFT: Intro Content */}
@@ -64,7 +74,7 @@ export default function Home() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-slow">
+      <div className="mt-20 animate-bounce-slow">
         <a href="#about" className="flex flex-col items-center gap-2 text-gray-500 hover:text-blue-400 transition-colors">
           <span className="text-[10px] uppercase font-bold tracking-widest">Scroll</span>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,4 +85,3 @@ export default function Home() {
     </div>
   )
 }
-

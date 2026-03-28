@@ -1,77 +1,76 @@
-import { useState, useEffect } from 'react'
-import SideNav from './components/SideNav'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Footer from './components/Footer'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import Home from './pages/Home.tsx'
+import About from './pages/About.tsx'
+import Contact from './pages/Contact.tsx'
+import Footer from './components/Footer.tsx'
+import TopNav from './components/TopNav.tsx'
 
-function App() {
-  const [activeSection, setActiveSection] = useState('home');
-  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
+interface SectionProps {
+  children: React.ReactNode;
+  id: string;
+}
 
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '-10% 0px -10% 0px'
-    };
+const ParallaxSection = ({ children, id }: SectionProps) => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-            setVisibleSections(prev => ({ ...prev, [entry.target.id]: true }));
-          }
-        });
-      },
-      observerOptions
-    );
-
-    const sections = ['home', 'about', 'contact'];
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  // Snappier transforms: faster fade-in, longer fully-visible duration, faster fade-out
+  // Reaches full visibility at 20% scroll and stays until 80% scroll
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.98, 1, 1, 0.98]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [20, 0, 0, -20]);
 
   return (
-    <div className="flex bg-gray-950 text-gray-100 min-h-screen selection:bg-blue-500/30">
-      {/* Side Navigation */}
-      <SideNav activeSection={activeSection} />
+    <motion.section
+      id={id}
+      ref={ref}
+      style={{
+        opacity,
+        scale,
+        y
+      }}
+      className="min-h-screen flex items-center justify-center relative pt-4 pb-28"
+    >
+      <div className="w-full max-w-7xl mx-auto">
+        {children}
+      </div>
+    </motion.section>
+  );
+};
 
-      {/* Main Content Areas */}
-      <main className="flex-grow md:ml-64 overflow-x-hidden">
-        <section 
-          id="home" 
-          className={`min-h-screen flex items-center justify-center snap-start transition-all duration-1000 ${visibleSections['home'] ? 'reveal-visible' : 'reveal-hidden'}`}
-        >
-          <div className="w-full">
-            <Home />
-          </div>
-        </section>
+function App() {
+  return (
+    <div className="bg-gray-950 text-gray-100 min-h-screen selection:bg-blue-500/30 overflow-x-hidden">
+      {/* Immersive parallax experience where sections fade in/out based on scroll position. */}
+      
+      <TopNav />
 
-        <section 
-          id="about" 
-          className={`min-h-screen flex items-center justify-center snap-start transition-all duration-1000 ${visibleSections['about'] ? 'reveal-visible' : 'reveal-hidden'} py-16`}
-        >
-          <div className="w-full">
-            <About />
-          </div>
-        </section>
+      <main className="relative">
+        <ParallaxSection id="home">
+          <Home />
+        </ParallaxSection>
 
-        <section 
-          id="contact" 
-          className={`min-h-screen flex items-center justify-center snap-start transition-all duration-1000 ${visibleSections['contact'] ? 'reveal-visible' : 'reveal-hidden'} py-16`}
-        >
-          <div className="w-full">
-            <Contact />
-          </div>
-        </section>
+        <ParallaxSection id="about">
+          <About />
+        </ParallaxSection>
+
+        <ParallaxSection id="contact">
+          <Contact />
+        </ParallaxSection>
 
         <Footer />
       </main>
+
+      {/* Subtle fixed background */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1)_0%,rgba(3,7,18,1)_100%)]"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/5 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/5 blur-[120px] rounded-full"></div>
+      </div>
     </div>
   )
 }
