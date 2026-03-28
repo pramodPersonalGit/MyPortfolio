@@ -13,7 +13,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+      <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 pt-28 lg:pt-0">
         
         {/* LEFT: Intro Content */}
         <div className="flex-1 text-left order-2 lg:order-1 animate-fade-left">
