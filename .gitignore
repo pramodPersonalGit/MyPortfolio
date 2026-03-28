@@ -1,3 +1,4 @@
 docs
 .sfdx
 node_modules
+dist
