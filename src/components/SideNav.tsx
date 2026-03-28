@@ -86,7 +86,7 @@ const SideNav: React.FC<SideNavProps> = ({ activeSection }) => {
         <div className={`mt-auto ${isOpen ? 'block' : 'hidden'} md:block opacity-40 hover:opacity-100 transition-opacity duration-500`}>
           <div className="flex flex-col gap-6">
             <a 
-              href="https://www.linkedin.com/in/pramod-sharma" 
+              href="https://www.linkedin.com/in/pramod-sharma-268a4412b" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 hover:text-blue-500 transition-colors text-[9px] font-bold uppercase tracking-[0.2em] flex items-center gap-3"

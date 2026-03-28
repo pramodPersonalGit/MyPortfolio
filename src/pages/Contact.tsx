@@ -32,8 +32,8 @@ const contactLinks: ContactLink[] = [
     id: 'contact-linkedin',
     icon: '🔗',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/pramod-sharma',
-    href: 'https://www.linkedin.com/in/pramod-sharma',
+    value: 'linkedin.com/in/pramod-sharma-268a4412b',
+    href: 'https://www.linkedin.com/in/pramod-sharma-268a4412b',
   },
 ]
 
