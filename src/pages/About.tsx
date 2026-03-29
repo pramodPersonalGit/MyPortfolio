@@ -47,7 +47,7 @@ const certBadges = [
 ]
 
 const skills = [
-  'AI', 'Agentforce', 'Lightning Web Components (LWC)', 'Visualforce', 'Apex', 'Triggers', 
+  'AI', 'Agentforce', 'Lightning Web Components (LWC)', 'Visualforce', 'Apex', 'Triggers',
   'Aura Components', 'Salesforce Administration', 'Flows', 'Git', 'SFDX-CLI', 'Workbench'
 ]
 
@@ -55,7 +55,7 @@ const experiences = [
   {
     title: 'Salesforce Developer / Administrator',
     company: 'K Health – USA',
-    period: 'Jan 2020 – Dec 2020',
+    period: '',
     description: 'Worked on Apex Triggers, Batch classes, Process Builder, Lightning Aura Components, and sharing rules. Enhanced and resolved defects in the existing K Health application. Improved Apex test coverage through unit testing and peer reviews. Configured business flows using Process Builder, Lightning Flow, and validation rules. Implemented business logic using Apex Triggers. Implemented frameworks to enhance Apex coding skills (ATK).',
     tech: ['Apex Triggers', 'Batch Classes', 'Process Builder', 'Aura Components', 'Lightning Flow']
   },
@@ -152,8 +152,8 @@ export default function About() {
         <h2 className="text-2xl font-bold text-white mb-8">Work Experience</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((exp, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex flex-col bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 hover:bg-gray-800/60 shadow-lg shadow-black/10"
             >
               <div className="flex justify-between items-start mb-4">

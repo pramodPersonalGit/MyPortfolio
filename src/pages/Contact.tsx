@@ -25,8 +25,8 @@ const contactLinks: ContactLink[] = [
     id: 'contact-location',
     icon: '📍',
     label: 'Location',
-    value: 'Ajmer, Rajasthan',
-    href: '#',
+    value: 'Thanwala, Dist- Nagaur, Rajasthan, India',
+    href: 'https://maps.app.goo.gl/PsN4nmEagcbjCHCU6',
   },
   {
     id: 'contact-linkedin',

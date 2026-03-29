@@ -19,10 +19,10 @@ const ParallaxSection = ({ children, id }: SectionProps) => {
   });
 
   // Snappier transforms: faster fade-in, longer fully-visible duration, faster fade-out
-  // Reaches full visibility at 20% scroll and stays until 80% scroll
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.98, 1, 1, 0.98]);
-  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [20, 0, 0, -20]);
+  // Reaches full visibility very early and stays until very close to the end, preventing dimming on long sections
+  const opacity = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [0.98, 1, 1, 0.98]);
+  const y = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [20, 0, 0, -20]);
 
   return (
     <motion.section
