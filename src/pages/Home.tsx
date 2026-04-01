@@ -1,20 +1,20 @@
 import profilePic from '../Images/20251220_023534(1).jpg.jpeg';
-import bgPic from '../Images/WhatsApp Image 2026-02-23 at 1.15.50 PM.jpeg';
+//import bgPic from '../Images/WhatsApp Image 2026-02-23 at 1.15.50 PM.jpeg';
 
 export default function Home() {
   return (
     <div className="relative w-full flex flex-col items-center px-4">
       {/* BACKGROUND IMAGE: Faded and Blurry */}
-      <div className="absolute inset-x-0 -top-40 -z-20 flex justify-center opacity-10 pointer-events-none">
+      {/* <div className="absolute inset-x-0 -top-40 -z-20 flex justify-center opacity-10 pointer-events-none">
         <img 
           src={bgPic} 
           alt="" 
           className="w-[1000px] h-auto object-contain blur-3xl rounded-full"
         />
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 pt-28 lg:pt-0">
-        
+
         {/* LEFT: Intro Content */}
         <div className="flex-1 text-left order-2 lg:order-1 animate-fade-left">
           {/* Main Heading */}
@@ -30,8 +30,8 @@ export default function Home() {
 
           {/* Short Intro Text */}
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl mb-12">
-            I craft scalable solutions that bridge the gap between business needs and 
-            technological excellence. My focus is on Salesforce architecture, 
+            I craft scalable solutions that bridge the gap between business needs and
+            technological excellence. My focus is on Salesforce architecture,
             Agentforce, and AI-driven automation.
           </p>
 
@@ -59,12 +59,12 @@ export default function Home() {
           <div className="relative group">
             {/* Background Glow */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500"></div>
-            
+
             {/* Image Container */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-gray-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-              <img 
-                src={profilePic} 
-                alt="Pramod Sharma" 
+              <img
+                src={profilePic}
+                alt="Pramod Sharma"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 to-transparent"></div>
