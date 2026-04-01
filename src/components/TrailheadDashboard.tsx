@@ -158,9 +158,6 @@ const TrailheadDashboard: React.FC = () => {
               progress={90} 
               targetLabel="Double Star Ranger" 
             />
-            <p className="text-xs text-gray-400 mt-3 text-center italic">
-              "Earn <span className="text-white font-bold">20 more badges</span> to reach Double Star Ranger"
-            </p>
 
             {/* Agentblazer Chip */}
             <motion.div 

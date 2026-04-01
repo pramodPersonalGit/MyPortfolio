@@ -54,6 +54,13 @@ const skills = [
 const experiences = [
   {
     title: 'Salesforce Developer / Administrator',
+    company: 'Workday - USA',
+    period: '',
+    description: 'Worked on Apex Triggers, Batch classes, Process Builder, Lightning Aura Components, and sharing rules. Enhanced and resolved defects in the existing Workday(Engage Core Run) application. Improved Apex test coverage through unit testing and peer reviews. Configured business flows using Process Builder, Lightning Flow, and validation rules. Implemented business logic using Apex Triggers.\nImplemented frameworks to enhance Apex coding skills:\n    - FFLIB\n    - Batch Framework\n    - Trigger Framework',
+    tech: ['Apex', 'Triggers', 'Batch Classes', 'Process Builder', 'Aura Components']
+  },
+  {
+    title: 'Salesforce Developer / Administrator',
     company: 'K Health – USA',
     period: '',
     description: 'Worked on Apex Triggers, Batch classes, Process Builder, Lightning Aura Components, and sharing rules. Enhanced and resolved defects in the existing K Health application. Improved Apex test coverage through unit testing and peer reviews. Configured business flows using Process Builder, Lightning Flow, and validation rules. Implemented business logic using Apex Triggers. Implemented frameworks to enhance Apex coding skills (ATK).',
@@ -124,7 +131,7 @@ export default function About() {
         <div className="bg-gray-800/20 border border-gray-700/50 rounded-2xl p-8 shadow-xl">
           <h3 className="text-blue-400 font-bold mb-4 uppercase tracking-widest text-sm">Summary</h3>
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Technical Lead | Salesforce Developer & Administrator with 5+ years driving Force.com innovation with LWC, Aura, Apex, Triggers, Visualforce, and Health Cloud (10+ months).
+            Technical Lead | Salesforce Developer & Administrator with 7+ years driving Force.com innovation with LWC, Aura, Apex, Triggers, Visualforce, and Health Cloud (10+ months).
           </p>
           <p className="text-gray-400 leading-relaxed">
             Spearheaded Agile Scrum teams (JIRA), full SDLC—from client requirements to testing, peer reviews, and 100% Apex test coverage. Core Expertise in Dynamic LWC, custom configurations, and Trailhead Mastery with multiple Superbadges. Delivered high-stakes e-commerce and automation projects with strong communication and problem-solving skills.
@@ -165,7 +172,7 @@ export default function About() {
                 )}
               </div>
               <h4 className="text-blue-300 text-sm font-semibold mb-3">{exp.title}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
                 {exp.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-auto">
